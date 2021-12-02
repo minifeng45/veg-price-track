@@ -15,7 +15,6 @@ dS1 = dE - pd.DateOffset(days=15)
 
 dWn = df[df['Date'] < dE][df['Date'] >= dS].groupby(['全名']).mean()
 dWl = df[df['Date'] < dS][df['Date'] >= dS1].groupby(['全名']).mean()
-import matplotlib.pyplot as plt
 dWn = dWn[dWn["成交量(公斤)"] > 1e3]
 dWl = dWl[dWl["成交量(公斤)"] > 1e3]
 
