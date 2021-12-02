@@ -25,12 +25,9 @@ def date2ROC(period, ending_date = None):
 
 date_list_ROC = date2ROC(7)
 
-market_list = ['all_market', 'single_first_market', 'single_second_market']
-
-
 ## control google chrome
 driver = webdriver.Chrome(executable_path= os.path.join(os.getcwd(),'chromedriver')) # set path to your directory which contains chromedriver
-conn = lite.connect(os.path.join(os.getcwd(),"bulk_database.db"))
+conn = lite.connect(os.path.join(os.getcwd(),'Web',"bulk_database.db"))
 
 
 df_new = pd.DataFrame()
@@ -53,42 +50,8 @@ for day in tqdm(date_list_ROC):
         pass
 # drop duplicate rows
 df_new.to_sql('single_first_market', conn, index = False, if_exists= "append")
-df_new = pd.DataFrame()
-for day in tqdm(date_list_ROC):
-    try:
-        fc = vl.vegdatadl('single_second_market')
-        raw_df = fc.date_scrape(day,driver)
-        raw_df['品種'] = raw_df['品種'].replace(np.nan, '單一品種')
-        raw_df['品名'] = raw_df['品名'].replace('蕃茄','番茄')
-        # Convert messy date into datetime object
-        raw_df[['Year','date_']] = raw_df['日期'].astype('str').str.split('/', n=1, expand=True)
-        raw_df['Year'] = raw_df['Year'].astype('int') + 1911
-        raw_df['Date'] = (raw_df['Year'].astype('str') +'/'+ raw_df['date_']).astype('datetime64[ns]')
-        raw_df.drop(columns=['日期', 'Year', 'date_'], inplace = True)
-        # Make a dict for getting whole name from code
-        raw_df['全名'] = raw_df['品名'] + "(" + raw_df['品種'] + ")"
-        df_new = df_new.append(raw_df)
-    except TypeError: 
-        pass
-# drop duplicate rows
-df_new.to_sql('single_second_market', conn, index = False, if_exists= "append")
 
-df_new = pd.DataFrame()
-for day in tqdm(date_list_ROC):
-    try:
-        fc = vl.vegdatadl('all_market')
-        raw_df = fc.date_scrape(day,driver)
-        raw_df['品種'] = raw_df['品種'].replace(np.nan, '單一品種')
-        raw_df['品名'] = raw_df['品名'].replace('蕃茄','番茄')
-        # Convert messy date into datetime object
-        raw_df[['Year','date_']] = raw_df['日期'].astype('str').str.split('/', n=1, expand=True)
-        raw_df['Year'] = raw_df['Year'].astype('int') + 1911
-        raw_df['Date'] = (raw_df['Year'].astype('str') +'/'+ raw_df['date_']).astype('datetime64[ns]')
-        raw_df.drop(columns=['日期', 'Year', 'date_'], inplace = True)
-        # Make a dict for getting whole name from code
-        raw_df['全名'] = raw_df['品名'] + "(" + raw_df['品種'] + ")"
-        df_new = df_new.append(raw_df)
-    except TypeError: 
-        pass
-# drop duplicate rows
-df_new.to_sql('all_market', conn, index = False, if_exists= "append")
+df = pd.read_sql_query(f'SELECT Date,全名, 品名代號,"平均價(元/公斤)","成交量(公斤)" FROM single_first_market WHERE date(Date) > date("now","-5 years")', conn)
+df = df.drop_duplicates()
+df = df[df['全名'] != "其他(單一品種)"]
+df.to_sql('single_first_market', conn, index = False, if_exists= "replace")
