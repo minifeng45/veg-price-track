@@ -78,4 +78,5 @@ def load():
     
     return render_template('loadingpage.html')
 
-app.run()
+if __name__ == '__main__':
+    app.run()
