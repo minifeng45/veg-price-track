@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vegetable Price Tracking(TW)</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{{ url_for('static', filename='dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ url_for('static', filename='dist/css/sb-admin-2.css') }}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-success smooth-scroll list-unstyled sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-lemon"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">綜合菜價資訊 </sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Breaking News</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" data-smooth = "#weekprice" href="#weekprice">
+                    <i class="fas fa-chart-line"aria-hidden="true"></i> 
+                    <span>每週蔬菜價格波動</span>
+                </a>
+            </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" data-smooth = "#seansonality" href="#seansonality" >
+                    <i class="fas fa-poll"></i>
+                    <span>去年今日菜價差異</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>相關網站連結</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">資料來源</h6>
+                        <a class="collapse-item" href="https://www.tapmc.com.tw/Pages/Trans/Price1">北農交易行情查詢</a>
+                        <a class="collapse-item" href="https://www.twfood.cc/vege">當季好蔬果</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">相關部落格</h6>
+                        <a class="collapse-item" href="https://medium.com/@flexitarian-guidebook">永續食堂</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <hr>
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Jumbotron -->
+                <!-- News jumbotron -->
+<div id = 'weekprice' class="jumbotron text-center hoverable p-4">
+
+    <!-- Grid row -->
+    <div class="row">
+  
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3">
+  
+        <!-- Featured image -->
+        <div class="view overlay">
+          <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left ml-3 mt-3">
+  
+        <!-- Excerpt -->
+        <span style="color:black">
+          <h2  class="pb-1"><i class="fas fa-chart-line"aria-hidden="true"></i> 每週蔬菜價格波動</h2>
+        </span>
+  
+        <h2 class="card-title text-gray-800  my-4 py-2">為了想要買到「便宜蔬菜」的人所設計</h2>
+        <h5 class="mb-4 pb-2  text-gray-800  my-4 py-2">查看哪些蔬菜在過去一週價格的漲跌 <br><br>
+            <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a> </h5>
+
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+  
+  </div>
+                  <hr>
+
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 ">
+                            <div  class="card mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-4 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="mb-3 mt-3 font-weight-bold text-white">漲價蔬菜/水果 列表</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div>
+                                    <div>
+                                        <div>
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                {% for i in range(9) %}
+                                                <div class='col-xs-12 col-md-4 col-sm-2 mb-3 mt-3 gray'>
+                                                    <i class="fa fa-fw fa-angle-double-up icon-red "></i>
+                                                    <a  href = /graphics/{{gainer.index.values[:9][i]}}>{{topgainer[i][0]}}  <br>  |||||||| {{topgainer[i][1]}} |||||||| </a></div>
+                                                {% endfor %}
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pie Chart -->
+                        <div class="col-xl-6">
+                            <div class="card  mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class=" card-header py-4 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-white mb-3 mt-3">跌價蔬菜/水果 列表</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div>
+                                <div>
+                                    <div>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            {% for i in range(9) %}
+                                            <div class='col-xs-12 col-md-4 col-sm-2 mb-3 mt-3 gray'>
+                                                <i class="fa fa-fw fa-angle-double-down icon-green "></i>
+                                                <a href = /graphics/{{loser.index.values[:9][i]}}>{{toploser[i][0]}}  <br>  |||||||| {{toploser[i][1]}} ||||||||</a> 
+                                            </div>
+                                            {% endfor %}
+                                          </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Jumbotron -->
+    <!-- Grid row -->
+    <div id="seansonality" class="jumbotron text-center hoverable p-4">
+    <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-7 text-md-left ml-3 mt-3">
+    
+            <!-- Excerpt -->
+            <span style="color:black">
+              <h2 class="pb-1"><i class="fas fa-poll"></i> 去年今日菜價差異</h2>
+            </span>
+      
+            <h2 class="card-title text-gray-800  my-4 py-2">為了想要買「特定蔬菜」的人設計</h2>
+            <h5 class="mb-4 pb-2  text-gray-800  my-4 py-2">查看當週蔬菜價格與去年同期的價格比較 <br><br>
+                <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a>
+
+          </div>
+  
+        <!-- Grid column -->
+        <div class="col-md-4 offset-md-1 mx-3 my-3">
+    
+          <!-- Featured image -->
+          <div class="view overlay">
+            <img src="{{ url_for('static', filename='dist/img/decorative-pumpkins-g0f1b422ff_1280.jpg') }}" class="img-fluid" alt="Sample image for first version of blog listing">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+    
+        </div>
+        <!-- Grid column -->
+    
+        <!-- Grid column -->
+    
+
+    </div>
+  </div>
+  <hr>
+  <!-- Jumbotron -->
+                <!-- Begin Page Content -->
+
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 ">
+                            <div class="card mb-4" style="color:#141044" >
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-4 d-flex flex-row align-items-center justify-content-between" style= "background-color: #141044">
+                                    <h6 class="mb-3 mt-3 font-weight-bold text-white">漲價蔬菜/水果 列表</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div>
+                                    <div>
+                                        <div>
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                {% for i in range(9) %}
+                                                <div class='col-xs-12 col-md-4 col-sm-2 mb-3 mt-3 gray'>
+                                                    <i class="fa fa-fw fa-angle-double-up icon-red "></i>
+                                                    <a  href = /graphics/{{ygainer.index.values[:9][i]}}>{{ytopgainer[i][0]}}  <br>  |||||||| {{ytopgainer[i][1]}} |||||||| </a></div>
+                                                {% endfor %}
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pie Chart -->
+                        <div class="col-xl-6">
+                            <div class="card  mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class=" card-header  py-4 d-flex flex-row align-items-center justify-content-between" style= "background-color: #141044">
+                                    <h6 class="m-0 font-weight-bold text-white mb-3 mt-3">跌價蔬菜/水果 列表</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div>
+                                <div>
+                                    <div>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            {% for i in range(9) %}
+                                            <div class='col-xs-12 col-md-4 col-sm-2 mb-3 mt-3 gray'>
+                                                <i class="fa fa-fw fa-angle-double-down icon-green "></i>
+                                                <a href = /graphics/{{yloser.index.values[:9][i]}}>{{ytoploser[i][0]}}  <br>  |||||||| {{ytoploser[i][1]}} ||||||||</a> 
+                                            </div>
+                                            {% endfor %}
+                                          </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- /.container-fluid -->
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Creators &copy; MiniFeng, Shih, Yu-Chen | Update at {{update_day}} </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ url_for('static', filename='dist/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ url_for('static', filename='dist/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ url_for('static', filename='dist/js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ url_for('static', filename='dist/vendor/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ url_for('static', filename='dist/js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/js/demo/chart-pie-demo.js') }}"></script>
+    <!-- Smooth scroll -->
+    <script>
+        var TopOffset = 85;    
+
+        $('a[data-smooth]').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - TopOffset
+                }, 1000);
+                return false;
+                }
+            }
+            });
+    </script>
+
+</body>
+
+</html>
