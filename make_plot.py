@@ -26,7 +26,6 @@ def make_plot(veg_name, duration_code):
     # Filter out specified veggitable
     mask = df['全名'] == veg_name
     df_single = df[mask]
-    print(df_single.head(5))
     # Calculate Year to date value for each entry using YTD_value function
     df_single.loc[:,'YTD_value'] = df_single.apply(YTD_value, args=(df_single,),axis=1)
 
