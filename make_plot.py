@@ -31,14 +31,14 @@ def make_plot(veg_name, duration_code):
 
     # Count y axes range based on selected date
     df_filtered = df_single[(df_single['Date'] < end_date) & (df_single['Date'] > start_date)]
-    if df_filtered['平均價(元/公斤)'].max() > df_single['YTD_value'].max():
+    if df_filtered['平均價(元/公斤)'].max() > df_filtered['YTD_value'].max():
         max = df_filtered['平均價(元/公斤)'].max()
     else:
-        max = df_single[(df_single['Date'] < end_date) & (df_single['Date'] > start_date)]['YTD_value'].max()
+        max = df_filtered['YTD_value'].max()
     if df_filtered['平均價(元/公斤)'].min() < df_single['YTD_value'].min():
         min = df_filtered['平均價(元/公斤)'].min()
     else:
-        min = df_single[(df_single['Date'] < end_date) & (df_single['Date'] > start_date)]['YTD_value'].min()
+        min = df_filtered['YTD_value'].min()
     margin = (max - min) * 0.2
 
     # Make graph
