@@ -27,7 +27,7 @@ date_list_ROC = date2ROC(14)
 
 ## control google chrome
 driver = webdriver.Chrome(executable_path= os.path.join(os.getcwd(),'chromedriver')) # set path to your directory which contains chromedriver
-conn = lite.connect(os.path.join(os.getcwd(),'Web',"bulk_database.db"))
+conn = lite.connect(os.path.join(os.getcwd(),"bulk_database.db"))
 
 
 df_new = pd.DataFrame()
@@ -49,6 +49,7 @@ for day in tqdm(date_list_ROC):
     except TypeError: 
         pass
 # drop duplicate rows
+df_new = df_new[['Date', '全名', '品名代號', "平均價(元/公斤)", "成交量(公斤)"]]
 df_new.to_sql('single_first_market', conn, index = False, if_exists= "append")
 
 df = pd.read_sql_query(f'SELECT Date,全名, 品名代號,"平均價(元/公斤)","成交量(公斤)" FROM single_first_market WHERE date(Date) > date("now","-5 years")', conn)
