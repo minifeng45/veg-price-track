@@ -13,8 +13,8 @@ dS = dE - pd.DateOffset(days=7)
 dS1 = dE - pd.DateOffset(days=15)
 
 
-dWn = df[df['Date'] < dE][df['Date'] >= dS].groupby(['全名']).mean()
-dWl = df[df['Date'] < dS][df['Date'] >= dS1].groupby(['全名']).mean()
+dWn = df[(df['Date'] < dE )& (df['Date'] >= dS)].groupby(['全名']).mean()
+dWl = df[(df['Date'] < dS )& (df['Date'] >= dS1)].groupby(['全名']).mean()
 dWn = dWn[dWn["成交量(公斤)"] > 1e3]
 dWl = dWl[dWl["成交量(公斤)"] > 1e3]
 
@@ -49,8 +49,8 @@ for i in range(9):
 dn_lasty = dE - pd.DateOffset(days=358)
 ds_lasty = dE - pd.DateOffset(days=372)
 
-d_lasty = df[df['Date'] <= dn_lasty][df['Date'] >= ds_lasty].groupby(['全名']).mean()
-dWn = df[df['Date'] <= dE][df['Date'] >= dS].groupby(['全名']).mean()
+d_lasty = df[(df['Date'] <= dn_lasty) & (df['Date'] >= ds_lasty)].groupby(['全名']).mean()
+dWn = df[(df['Date'] <= dE) & (df['Date'] >= dS)].groupby(['全名']).mean()
 
 ty1w = return_rate(dWn["平均價(元/公斤)"],d_lasty["平均價(元/公斤)"])
 
