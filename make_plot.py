@@ -35,7 +35,7 @@ def make_plot(veg_name, duration_code):
         max = df_filtered['平均價(元/公斤)'].max()
     else:
         max = df_filtered['YTD_value'].max()
-    if df_filtered['平均價(元/公斤)'].min() < df_single['YTD_value'].min():
+    if df_filtered['平均價(元/公斤)'].min() < df_filtered['YTD_value'].min():
         min = df_filtered['平均價(元/公斤)'].min()
     else:
         min = df_filtered['YTD_value'].min()
