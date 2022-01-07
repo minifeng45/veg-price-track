@@ -35,21 +35,11 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-lemon"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">綜合菜價資訊 </sup></div>
+                <div class="sidebar-brand-text mx-3">綜合菜價資訊</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Breaking News</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -95,20 +85,11 @@
                     </div>
                 </div>
             </li>
-
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
 
         </ul>
         <!-- End of Sidebar -->
@@ -153,7 +134,7 @@
   
         <h2 class="card-title text-gray-800  my-4 py-2">為了想要買到「便宜蔬菜」的人所設計</h2>
         <h5 class="mb-4 pb-2  text-gray-800  my-4 py-2">查看哪些蔬菜在過去一週價格的漲跌 <br><br>
-            <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a> </h5>
+            <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg/本週漲跌" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a> </h5>
 
       </div>
       <!-- Grid column -->
@@ -232,7 +213,7 @@
       
             <h2 class="card-title text-gray-800  my-4 py-2">為了想要買「特定蔬菜」的人設計</h2>
             <h5 class="mb-4 pb-2  text-gray-800  my-4 py-2">查看當週蔬菜價格與去年同期的價格比較 <br><br>
-                <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a>
+                <a><i class="fas fa-arrow-down"></i> 前九名列表</a> / <a href="/allveg/去年同期" class="peach-gradient"><i  class="fas fa-clone left"></i> 看全部</a>
 
           </div>
   
@@ -249,10 +230,6 @@
     
         </div>
         <!-- Grid column -->
-    
-        <!-- Grid column -->
-    
-
     </div>
   </div>
   <hr>
@@ -335,25 +312,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ url_for('static', filename='dist/vendor/jquery/jquery.min.js') }}"></script>

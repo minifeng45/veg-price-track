@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Charts</title>
+    <title>蔬菜價格波動詳表(TW)</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ url_for('static', filename='dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,14 +30,14 @@
 
         <!-- Sidebar -->
         
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar " >
+        <ul class="navbar-nav bg-gradient-success smooth-scroll list-unstyled sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon rotate-15">
+                  <i class="fa fa-info" aria-hidden="true"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">蔬菜漲跌列表 <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">蔬菜漲跌列表</div>
             </a>
 
             <!-- Divider -->
@@ -46,94 +46,29 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="/">
-                    <span>首頁</span></a>
+                    <span>返回首頁</span></a>
             </li>
-
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
+            <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item active">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                  aria-expanded="true" aria-controls="collapsePages">
+                  <i class="fas fa-fw fa-folder"></i>
+                  <span>相關網站連結</span>
+              </a>
+              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                      <h6 class="collapse-header">資料來源</h6>
+                      <a class="collapse-item" href="https://www.tapmc.com.tw/Pages/Trans/Price1">北農交易行情查詢</a>
+                      <a class="collapse-item" href="https://www.twfood.cc/vege">當季好蔬果</a>
+                      <div class="collapse-divider"></div>
+                      <h6 class="collapse-header">相關部落格</h6>
+                      <a class="collapse-item" href="https://medium.com/@flexitarian-guidebook">永續食堂</a>
+                  </div>
+              </div>
+          </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -151,7 +86,7 @@
   
         <!-- Excerpt -->
         <span style="color:black">
-          <h2  class="pb-5 pt-5 pl-5"><i class="fas fa-table"aria-hidden="true"></i> 蔬菜價格波動詳表</h2>
+          <h2  class="pb-5 pt-5 pl-5"><i class="fas fa-table"aria-hidden="true"></i> [{{type}}]-蔬菜價格波動詳表</h2>
         </span>
 
 
@@ -182,29 +117,41 @@
                                            <thead>
                                               <tr>
                                               <th>蔬菜</th>
-                                              <th>本週均價</th>
-                                              <th>漲跌幅度</th>
+                                              <th>漲跌__pycache__
+bulk_database.db
+chromedriver
+dataclean.py
+make_plot.py
+Procfile
+README.md
+requirements.txt
+static
+templates
+top_list.py
+vegdatadl.py
+venv
+weekly_database_update.py
+wsgi.pyveve（元）</th>
+                                              <th>漲跌幅度（％）</th>
                                               <th>更多資訊</th>
                                               </tr>
                                            </thead>
                                            <tbody >
                                             {%for veg in general_list%}
                                               <tr>
-                                                 <td>{{veg[0]}}</td>
+                                                {% if veg[1]|float > 0.0 %}
+                                                 <td><i class="fa fa-fw fa-angle-double-up icon-red "></i> {{veg[0]}}</td>
+                                                {% elif veg[1]|float == 0.0 %}
+                                                  <td><i class="fa fa-minus icon-gray"></i> {{veg[0]}}</td>
+                                                {% else %}
+                                                <td><i class="fa fa-fw fa-angle-double-down icon-green "></i> {{veg[0]}}</td>
+                                                {% endif %}
                                                  <td>{{veg[1]}}</td>
+                                                 <td>{{veg[2]}}</td>
                                                  <td><i class="fas fa-clone left"></i> <a href="/graphics/{{veg[0]}}">詳情<a></td>
                                               </tr>
                                             {% endfor %}
                                            </tbody>
-                                            <tbody >
-                                             {%for veg in gain_list%}
-                                               <tr>
-                                                  <td>{{veg[0]}}</td>
-                                                  <td>{{veg[1]}}</td>
-                                                  <td><i class="fas fa-clone left"></i> <a href="/graphics/{{veg[0]}}">詳情<a></td>
-                                               </tr>
-                                             {% endfor %}
-                                            </tbody>
                                         </table>
                                         </div>
                                      <div id = 'gain' class="tab-pane fade container-fluid" role="tabpanel" >
@@ -212,15 +159,37 @@
                                            <thead>
                                               <tr>
                                               <th>蔬菜</th>
-                                              <th>漲跌幅度</th>
+                                              <th>漲跌__pycache__
+bulk_database.db
+chromedriver
+dataclean.py
+make_plot.py
+Procfile
+README.md
+requirements.txt
+static
+templates
+top_list.py
+vegdatadl.py
+venv
+weekly_database_update.py
+wsgi.pyveve（元）</th>
+                                              <th>漲跌幅度（％）</th>
                                               <th>更多資訊</th>
                                               </tr>
                                            </thead>
                                            <tbody >
                                             {%for veg in gain_list%}
                                               <tr >
-                                                 <td>{{veg[0]}}</td>
+                                                {% if veg[1]|float > 0.0 %}
+                                                 <td><i class="fa fa-fw fa-angle-double-up icon-red "></i> {{veg[0]}}</td>
+                                                {% elif veg[1]|float == 0.0 %}
+                                                  <td><i class="fa fa-minus icon-gray"></i> {{veg[0]}}</td>
+                                                {% else %}
+                                                <td><i class="fa fa-fw fa-angle-double-down icon-green "></i> {{veg[0]}}</td>
+                                                {% endif %}
                                                  <td>{{veg[1]}}</td>
+                                                 <td>{{veg[2]}}</td>
                                                  <td><i class="fas fa-clone left"></i> <a href="/graphics/{{veg[0]}}">詳情<a></td>
                                               </tr>
                                             {% endfor %}
@@ -233,15 +202,37 @@
                                            <thead>
                                               <tr>
                                               <th>蔬菜</th>
-                                              <th>漲跌幅度</th>
+                                              <th>漲跌__pycache__
+bulk_database.db
+chromedriver
+dataclean.py
+make_plot.py
+Procfile
+README.md
+requirements.txt
+static
+templates
+top_list.py
+vegdatadl.py
+venv
+weekly_database_update.py
+wsgi.pyveve（元）</th>
+                                              <th>漲跌幅度（％）</th>
                                               <th>更多資訊</th>
                                               </tr>
                                            </thead>
                                            <tbody >
                                             {%for veg in loser_list%}
                                               <tr>
-                                                 <td>{{veg[0]}}</td>
+                                                {% if veg[1]|float > 0.0 %}
+                                                 <td><i class="fa fa-fw fa-angle-double-up icon-red "></i> {{veg[0]}}</td>
+                                                {% elif veg[1]|float == 0.0 %}
+                                                  <td><i class="fa fa-minus icon-gray"></i> {{veg[0]}}</td>
+                                                {% else %}
+                                                <td><i class="fa fa-fw fa-angle-double-down icon-green "></i> {{veg[0]}}</td>
+                                                {% endif %}
                                                  <td>{{veg[1]}}</td>
+                                                 <td>{{veg[2]}}</td>
                                                  <td><i class="fas fa-clone left"></i> <a href="/graphics/{{veg[0]}}">詳情<a></td>
                                               </tr>
                                             {% endfor %}
@@ -307,25 +298,6 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ url_for('static', filename='dist/vendor/jquery/jquery.min.js') }}"></script>

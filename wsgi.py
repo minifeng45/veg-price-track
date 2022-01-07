@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 # test the plotly on html
-from top_list import gainer, loser, general_list, toploser_list, topgainer_list, loser_list, gainer_list, ygainer, yloser, ytoploser_list, ytopgainer_list, yloser_list, ygainer_list, update_day
+from top_list import gainer, loser, general_list, toploser_list, topgainer_list, loser_list, gainer_list, ygainer, yloser, ytoploser_list, ytopgainer_list, yloser_list, ygainer_list, ygeneral_list, update_day
 from json import dumps, loads
 
 import plotly
@@ -50,6 +50,7 @@ def graphics(name):
     b1 = dumps(bar1 , cls=plotly.utils.PlotlyJSONEncoder)
     bar2 = mp.seasonality_volume(veg_name = name)
     b2 = dumps(bar2 , cls=plotly.utils.PlotlyJSONEncoder)
+    update = update_day
     return render_template('graphics.html',  
     topgainer = topgainer, 
     toploser = toploser, 
@@ -57,15 +58,29 @@ def graphics(name):
     plot0 = p0,plot1 = p1,plot2 = p2,plot3 =p3, plot4 =p4, plot5 =p5,
     barplot1 = b1,
     barplot2 = b2,
+    update_day = update
     )
 
-@app.route('/allveg')
-def allveg():
-    loserlist = loser_list
-    gainlist = gainer_list
-    generallist = general_list
-    update = update_day
-    return render_template('allveg.html', loser_list = loserlist, gain_list = gainlist, general_list = generallist, update_day = update)
+@app.route('/allveg/<type>')
+def allveg(type):
+    if type == '本週漲跌':
+        loserlist = loser_list
+        gainlist = gainer_list
+        generallist = general_list
+        update = update_day
+        return render_template('allveg.html', 
+        loser_list = loserlist, gain_list = gainlist, 
+        general_list = generallist, update_day = update, 
+        type = type)
+    if type == '去年同期':
+        loserlist = yloser_list
+        gainlist = ygainer_list
+        generallist = ygeneral_list
+        update = update_day
+        return render_template('allveg.html', 
+        loser_list = loserlist, gain_list = gainlist, 
+        general_list = generallist, update_day = update, 
+        type = type)       
 
 @app.route('/allveg_seasonality')
 def allvegseasonality():
@@ -79,4 +94,4 @@ def load():
     return render_template('loadingpage.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

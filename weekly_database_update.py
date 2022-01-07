@@ -23,7 +23,7 @@ def date2ROC(period, ending_date = None):
     date_list_ROC = [str(int(x[0:4])-1911) + x[4:] for x in date_list]
     return date_list_ROC
 
-date_list_ROC = date2ROC(14)
+date_list_ROC = date2ROC(30)
 
 ## control google chrome
 driver = webdriver.Chrome(executable_path= os.path.join(os.getcwd(),'chromedriver')) # set path to your directory which contains chromedriver
